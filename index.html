@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    body {
+      display: flex;
+      height: 100vh; 
+      justify-content: center;
+      align-items: center; /* Centraliza verticalmente */
+      margin: 0; /* Remove margem padrão do body */
+      background-color: #141414;
+    }
+    img {
+      border-radius: 50%; 
+      overflow: hidden;
+      margin-top: 5%;
+    }
+    .profile-container {
+      background-color: #1F1F1F;
+      padding: 20px; /* Adiciona espaçamento interno */
+      text-align: center; /* Centraliza conteúdo horizontalmente */
+      border-radius: 3%;
+      width: 369px;
+      border-left: 20px;
+      border-right: 20px;
+      margin: 0 20px;
+
+    }
+    .pBranco{
+      color: white;
+      font-size: 28px;
+      font: bold;
+    }
+    .pVerde{
+      color: #9DB944;
+      font-size: 14px;
+    }
+    p{
+      color: white;
+      font-size: 14px;
+      font: bold;
+    }
+    button{
+      background-color: #333333; /* Cor de fundo do botão */
+      color: white; /* Cor do texto do botão */
+      width: 90%; /* Largura do botão */
+      height: 35px; /* Altura do botão */
+      border: none; /* Remove a borda do botão */
+      border-radius: 5px; /* Raio da borda do botão */
+      margin-top: 10px; /* Espaço acima do botão */
+      cursor: pointer; /* Transforma o cursor em um ponteiro ao passar sobre o botão */
+      font-size: 14px; /* Tamanho da fonte do botão */
+    }
+  </style>
+  
+  <title>Frontend Mentor | Social links profile</title>
+</head>
+<body>
+  <div class="profile-container">
+    <img class="img" src="assets/images/avatar-jessica.jpeg" alt="Jessica Randall" width="100" height="100">
+    <p class="pBranco">Jessica Randall</p>
+    <p class="pVerde">London, United Kingdom</p>
+    <p class="p">"Front-end developer and avid reader."</p>
+    <button class="button"  onclick="handleButtonClick('https://github.com/yara265')">GitHub</button>
+    <button class="button">Frontend Mentor</button>
+    <button class="button" onclick="handleButtonClick('https://www.linkedin.com/in/yara-nunes-de-oliveira-84a910225/')">LinkedIn</button>
+    <button class="button">Twiter</button>
+    <button class="button">Instagram</button>
+
+    <script>
+      function handleButtonClick(mUrl) {
+        var button = document.querySelector('.button');
+        button.style.transform = 'translateY(1px)'; /* Move o botão para baixo ao ser clicado */
+        // Define um timeout para remover o efeito após um curto período
+        setTimeout(function() {
+          button.style.transform = 'translateY(0)';
+        }, 200); // Tempo em milissegundos (0.1 segundos)
+
+        var url = mUrl;
+        // window.location.href = url; abre na mesma aba
+        window.open(url, '_blank'); // Abre a URL em uma nova aba
+      }
+    </script>
+  </div>
+</body>
+</html>
